@@ -1,0 +1,20 @@
+[project]
+name = "job-portal-netflix"
+version = "0.1.0"
+description = "A job portal with a Netflix-inspired UI"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "python-dotenv",
+    "pydantic",
+    "python-jose[cryptography]",
+    "passlib[bcrypt]",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest",
+    "httpx",
+]

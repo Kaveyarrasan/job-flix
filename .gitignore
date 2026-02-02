@@ -1,0 +1,9 @@
+node_modules/
+myvenv/
+.env
+dist/
+__pycache__/
+*.pyc
+.DS_Store
+.zencoder/
+.zenflow/
