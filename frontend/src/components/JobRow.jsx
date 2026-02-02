@@ -22,10 +22,10 @@ const JobRow = ({ title, jobs, onJobClick }) => {
       <div className="relative">
         <button 
           aria-label="Scroll Left"
-          className="absolute left-[-20px] md:left-[-50px] top-0 bottom-0 m-auto h-[168px] w-12 bg-black/40 hover:bg-black/70 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105 z-40 rounded-r-md backdrop-blur-md hidden md:flex items-center justify-center text-white"
+          className="absolute left-0 top-0 bottom-0 m-auto h-full w-12 md:w-16 bg-black/40 hover:bg-black/60 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 z-40 flex items-center justify-center text-white"
           onClick={() => scroll('left')}
         >
-          <ChevronLeft className="w-10 h-10" />
+          <ChevronLeft className="w-8 h-8 md:w-12 md:h-12 transform hover:scale-125 transition-transform" />
         </button>
         
         <div 
@@ -48,12 +48,14 @@ const JobRow = ({ title, jobs, onJobClick }) => {
                 <img 
                   src={job.logo_url || placeholderImg} 
                   alt=""
-                  className={`w-full h-full object-cover transition-all duration-700 brightness-100 group-hover/card:brightness-110 ${isEmpty ? 'opacity-20 grayscale' : 'opacity-100'}`}
+                  className={`w-full h-full object-cover transition-all duration-700 brightness-110 group-hover/card:brightness-125 ${isEmpty ? 'opacity-20 grayscale' : 'opacity-100'}`}
                 />
                 
                 {/* Dynamic Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 group-hover/card:opacity-0 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 bg-black/20 group-hover/card:bg-transparent transition-colors duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Brighter Glow Ring on Hover */}
+                <div className="absolute inset-0 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ring-[3px] ring-netflix-red shadow-[0_0_30px_rgba(229,9,20,0.8),inset_0_0_20px_rgba(229,9,20,0.4)] z-50 rounded-md"></div>
 
                 <div className={`absolute inset-0 flex flex-col justify-end p-4 md:p-6 transition-all duration-500 ${isEmpty ? 'opacity-40' : 'opacity-0 group-hover/card:opacity-100'}`}>
                   {!isEmpty ? (
@@ -85,10 +87,10 @@ const JobRow = ({ title, jobs, onJobClick }) => {
 
         <button 
           aria-label="Scroll Right"
-          className="absolute right-[-20px] md:right-[-50px] top-0 bottom-0 m-auto h-[168px] w-12 bg-black/40 hover:bg-black/70 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-105 z-40 rounded-l-md backdrop-blur-md hidden md:flex items-center justify-center text-white"
+          className="absolute right-0 top-0 bottom-0 m-auto h-full w-12 md:w-16 bg-black/40 hover:bg-black/60 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-300 z-40 flex items-center justify-center text-white"
           onClick={() => scroll('right')}
         >
-          <ChevronRight className="w-10 h-10" />
+          <ChevronRight className="w-8 h-8 md:w-12 md:h-12 transform hover:scale-125 transition-transform" />
         </button>
       </div>
     </section>
