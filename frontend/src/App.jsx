@@ -9,34 +9,34 @@ import LoginPage from './components/LoginPage';
 const HomePage = ({ trendingJobs, remoteJobs, setSelectedJob, handleApply }) => (
   <div className="animate-fadeIn">
     {/* Hero Section */}
-    <header className="relative h-[80vh] w-full bg-cover bg-center flex items-center px-6 md:px-12" style={{ backgroundImage: 'linear-gradient(to right, #141414 10%, transparent), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2070")' }}>
-      <div className="max-w-3xl space-y-6 pt-20">
-        <h2 className="text-netflix-red font-bold uppercase tracking-[0.5em] text-sm md:text-base">Featured Role</h2>
-        <h1 className="text-4xl md:text-7xl font-black leading-[1.1]">Senior Full <br /> Stack Developer</h1>
-        <p className="text-lg md:text-xl text-gray-200 max-w-xl">
+    <header className="relative h-[85vh] w-full bg-cover bg-center flex items-center px-6 md:px-12" style={{ backgroundImage: 'linear-gradient(to right, #141414 20%, transparent), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2070")' }}>
+      <div className="max-w-3xl space-y-6 pt-32 pb-20">
+        <h2 className="text-netflix-red font-bold uppercase tracking-[0.5em] text-xs md:text-sm">Featured Role</h2>
+        <h1 className="text-4xl md:text-7xl font-black leading-[1.1] drop-shadow-lg">Senior Full <br /> Stack Developer</h1>
+        <p className="text-lg md:text-xl text-gray-200 max-w-xl drop-shadow-md">
           Lead the core architecture at **CloudScale**. Help build distributed systems serving millions. 
           Premium salary and global remote benefits.
         </p>
-        <div className="flex space-x-4 pt-4">
+        <div className="flex space-x-4 pt-6">
           <button 
             onClick={() => handleApply(1)}
-            className="bg-white text-black px-6 md:px-10 py-3 rounded font-bold hover:bg-white/80 transition flex items-center space-x-2"
+            className="bg-white text-black px-6 md:px-10 py-3 rounded-md font-bold hover:bg-white/80 transition flex items-center space-x-2 shadow-xl"
           >
-            <span>▶</span> <span>Apply Now</span>
+            <span className="text-xl">▶</span> <span>Apply Now</span>
           </button>
-          <button className="bg-gray-500/50 text-white px-6 md:px-10 py-3 rounded font-bold hover:bg-gray-500/30 backdrop-blur-md transition">
-            ⓘ More Info
+          <button className="bg-gray-500/60 text-white px-6 md:px-10 py-3 rounded-md font-bold hover:bg-gray-500/40 backdrop-blur-md transition flex items-center space-x-2 shadow-xl">
+            <span className="text-lg">ⓘ</span> <span>More Info</span>
           </button>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-netflix-black to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-netflix-black via-netflix-black/50 to-transparent"></div>
     </header>
 
     {/* Content Rows */}
-    <main className="relative z-40 -mt-24 md:-mt-48 pb-20 space-y-12">
-      <JobRow title="Trending on JobFlix" jobs={trendingJobs} onJobClick={setSelectedJob} />
-      <JobRow title="Remote Opportunities" jobs={remoteJobs} onJobClick={setSelectedJob} />
-      <JobRow title="Global Tech Leaders" jobs={[...trendingJobs].reverse()} onJobClick={setSelectedJob} />
+    <main className="relative z-40 pb-20 space-y-12 bg-netflix-black">
+      <JobRow title="Trending on JobFlix" jobs={trendingJobs.length > 0 ? trendingJobs : Array(6).fill({})} onJobClick={setSelectedJob} />
+      <JobRow title="Remote Opportunities" jobs={remoteJobs.length > 0 ? remoteJobs : Array(6).fill({})} onJobClick={setSelectedJob} />
+      <JobRow title="Global Tech Leaders" jobs={trendingJobs.length > 0 ? [...trendingJobs].reverse() : Array(6).fill({})} onJobClick={setSelectedJob} />
     </main>
   </div>
 );
