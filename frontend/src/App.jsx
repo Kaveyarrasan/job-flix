@@ -33,7 +33,7 @@ const HomePage = ({ trendingJobs, remoteJobs, setSelectedJob, handleApply }) => 
     </header>
 
     {/* Content Rows */}
-    <main className="relative z-40 pb-20 space-y-12 bg-netflix-black">
+    <main className="relative z-40 pb-20 space-y-16 bg-netflix-black -mt-4 md:-mt-8">
       <JobRow title="Trending on JobFlix" jobs={trendingJobs.length > 0 ? trendingJobs : Array(6).fill({})} onJobClick={setSelectedJob} />
       <JobRow title="Remote Opportunities" jobs={remoteJobs.length > 0 ? remoteJobs : Array(6).fill({})} onJobClick={setSelectedJob} />
       <JobRow title="Global Tech Leaders" jobs={trendingJobs.length > 0 ? [...trendingJobs].reverse() : Array(6).fill({})} onJobClick={setSelectedJob} />
