@@ -1,0 +1,34 @@
+project works online for free
+
+https://github.com/Kaveyarrasan/JobFlix.git
+
+"private": false,
+"user_view_type": "public",
+"site_admin": false
+
+
+# Docker has specific installation instructions for each operating system.
+# Please refer to the official documentation at https://docker.com/get-started/
+
+# Pull the Node.js Docker image:
+docker pull node:24-alpine
+
+# Create a Node.js container and start a Shell session:
+docker run -it --rm --entrypoint sh node:24-alpine
+
+# Verify the Node.js version:
+node -v # Should print "v24.13.0".
+
+# Verify npm version:
+npm -v # Should print "11.6.2".
+
+Kave@1234
+
+postgresql://postgres_db:wzh4NixMBnN7eST5wz8iu0ab682bMvUO@dpg-d607n6m3jp1c73co48i0-a/jobportal_k7s3
+
+https://job-flix.vercel.app/
+https://jobflix-backend.onrender.com
+
+Kavey@1234
+
+Update the logo with Pickjobs_logo under UI_Design and apply the specified font family through out the whole page. Make the header sections i.e., Jobs by Category, Featured Jobs and Jobs by Location and their bottom content aligned center and right align the  text i.e., All categories, More jobs & More locations with black for each header section 
